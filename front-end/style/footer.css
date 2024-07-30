@@ -1,0 +1,18 @@
+.rodape{
+    display: flex;
+    justify-content: center;
+    margin: 3.1rem 0 4rem 0;
+    text-align: center;
+}
+
+.box-rodape-texto{
+    margin: 2.1rem 0 0 0;
+}
+
+.rodape-link{
+padding: 1rem;
+}
+
+.box-reodape-geral{
+    margin: 0 39.1rem 0 39.2rem;
+}

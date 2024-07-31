@@ -1,5 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-def index(request):
-    return HttpResponse('<h1>alura space<h1>')
+
+def home(request):
+    return render(request, 'front-end/home.html')
+
+def portfolio(request):
+    return render(request, 'front-end/projetos.html')
+
+def caricaturas(request):
+    return render(request, 'front-end/caricaturas.html')
+
+def sobre(request):
+    return render(request, 'front-end/sobre.html')

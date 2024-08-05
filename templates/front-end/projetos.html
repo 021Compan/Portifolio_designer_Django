@@ -1,47 +1,21 @@
+{% extends 'front-end/base.html'%}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Klee+One&family=Righteous&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="{% static 'imagens/logo-1_1.ico' %}" type="image/x-icon">
-    <script src="{% static './js/animacao.js' %}" defer></script>
-    <title>Renan Compan</title>
-</head>
-<body>
-    <header class="cabecalho">
-        <img src="{% static 'imagens/logo_jpeg_piramide_branca_fundo_azul-removebg-preview.png' %}" alt="Logo RenanCompan" class="cabecalho__logo">
-        <nav class="cabecalho__nav">
-            <a href="{% url 'home' %}" class="cabecalho__nav-botao">Home</a>
-            <a href="{% url 'projetos' %}" class="cabecalho__nav-botao">Projetos</a>
-            <a href="{% url 'caricaturas' %}" class="cabecalho__nav-botao">Caricaturas</a>
-            <a href="{% url 'sobre' %}" class="cabecalho__nav-botao">Sobre</a>
-        </nav>
-    </header>
+{% block content%}
     <main class="projetos__intro">
         <section class="intro-chamada">
             <h1 class="projetos__intro-texto">branding</h1>
         </section>
-        <section class="projetos__intro-conteudo efeito__img-conteudo">
-            <img src="{% static 'imagens/eagle imagens.jpg' %}" alt="Projeto Eagle" class="projetos__intro-imagen">
-            <img src="{% static 'imagens/mago imagens.jpg' %}" alt="Projeto Mago" class="projetos__intro-imagen">
-        </section>
+            
+            <section class="projetos__intro-conteudo efeito__img-conteudo">
 
+            <div class="cards">
+                {% if cards %}
+                {% for fotografia in cards %}
+                <img src="{% static 'imagens/'%}{{fotografia.foto}}" alt="{{fotografia.nome}}" class="projetos__intro-imagen">          
+                {% endfor %} 
+                {% else %}
+                {% endif %}
+            </div> 
+        </section>
     </main>
-    <footer class="rodape">
-        <div class="box-reodape-geral">
-            <a href="#" class="rodape-link"><img src="{% static 'imagens/insta.png' %}" alt="logo do Instagram"></a>
-            <a href="#" class="rodape-link"><img src="{% static 'imagens/whats.png' %}" alt="Logo do Whatsapp"></a>
-            <div class="box-rodape-texto">
-                <p class="rodape-text">© 2024 por Luiz Compan </p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock %}

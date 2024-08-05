@@ -1,0 +1,10 @@
+{% load static %}
+<header class="cabecalho">
+    <img src="{% static 'imagens/logo_jpeg_piramide_branca_fundo_azul-removebg-preview.png' %}" alt="Logo RenanCompan" class="cabecalho__logo">
+    <nav class="cabecalho__nav">
+        <a href="{% url 'home' %}" class="cabecalho__nav-botao">Home</a>
+        <a href="{% url 'projetos' %}" class="cabecalho__nav-botao">Projetos</a>
+        <a href="{% url 'caricaturas' %}" class="cabecalho__nav-botao">Caricaturas</a>
+        <a href="{% url 'sobre' %}" class="cabecalho__nav-botao">Sobre</a>
+    </nav>
+</header>

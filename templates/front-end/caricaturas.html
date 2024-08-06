@@ -1,15 +1,21 @@
 {% extends 'front-end/base.html'%}
 {% load static %}
 {% block content%}
-
     <main class="projetos__intro">
         <section class="intro-chamada">
-            <h1 class="projetos__intro-texto">caricaturas</h1>
+            <h1 class="projetos__intro-texto">branding</h1>
         </section>
-        <li class="cards">
+            
             <section class="projetos__intro-conteudo efeito__img-conteudo">
-                <img src="{% static 'imagens/eagle imagens.jpg' %}" alt="Projeto Eagle" class="projetos__intro-imagen">
-        </li>
-            </section>
+
+            <div class="cards">
+                {% if cards %}
+                {% for fotografia in cards %}
+                <img src="{% static 'imagens/'%}{{Caricatura.foto}}" alt="{{Caricatura.nome}}" class="projetos__intro-imagen">          
+                {% endfor %} 
+                {% else %}
+                {% endif %}
+            </div> 
+        </section>
     </main>
 {% endblock %}

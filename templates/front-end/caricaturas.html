@@ -10,8 +10,12 @@
 
             <div class="cards">
                 {% if cards %}
-                {% for fotografia in cards %}
-                <img src="{% static 'imagens/'%}{{Caricatura.foto}}" alt="{{Caricatura.nome}}" class="projetos__intro-imagen">          
+                {% for caricatura in cards %}
+                {% if caricatura.foto == "" or caricatura.foto == null %}
+                <img src="{% static 'imagens/not_found.png'%}" alt="{{caricatura.nome}}" class="projetos__intro-imagen">
+                {% else %}
+                <img src="{{caricatura.foto.url}}" alt="{{caricatura.nome}}" class="projetos__intro-imagen">
+                {% endif %}
                 {% endfor %} 
                 {% else %}
                 {% endif %}

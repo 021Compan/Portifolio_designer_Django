@@ -28,7 +28,7 @@ body{
 
 ::-webkit-scrollbar{
     width: 0.75rem;
-    background-color: rgb(0, 0, 0);
+    background-color: transparent;
     border: none;
 }
 
